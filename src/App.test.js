@@ -1,8 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import Text from "./components/Text";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// TEST PROPS Component
+describe("TextComponent", () => {
+  it("renders the provided text", () => {
+    const text = "Hello, World!";
+    render(<Text text={text} />);
+    const textElement = screen.getByText(text);
+    expect(textElement).toBeInTheDocument();
+  });
 });
